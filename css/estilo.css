@@ -17,8 +17,7 @@
 }*/
 
 body {
-  font-family: 'Questrial', sans-serif;
-	font-family: 'Rubik', sans-serif;
+  font-family: 'Allerta', sans-serif;
   margin: 0;
 }
 
@@ -85,7 +84,7 @@ input:focus, textarea:focus {
 }
 
 .titulo {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 70px;
   margin-bottom: 0;
   margin-top: 70px;
@@ -111,7 +110,7 @@ input:focus, textarea:focus {
 }
 
 .guitarras h2 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 35px;
 }
 
@@ -277,7 +276,7 @@ input:focus, textarea:focus {
 
 @media screen and (max-width: 800px) {
   body {
-    background: peru;
-    border: 15px solid lightblue;
+    background: red;
+    border: 15px solid blue;
   }
 }
