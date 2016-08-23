@@ -17,7 +17,8 @@
 }*/
 
 body {
-  font-family: 'Allerta', sans-serif;
+  font-family: 'Questrial', sans-serif;
+	font-family: 'Rubik', sans-serif;
   margin: 0;
 }
 
@@ -84,7 +85,7 @@ input:focus, textarea:focus {
 }
 
 .titulo {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 70px;
   margin-bottom: 0;
   margin-top: 70px;
@@ -110,7 +111,7 @@ input:focus, textarea:focus {
 }
 
 .guitarras h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 35px;
 }
 
