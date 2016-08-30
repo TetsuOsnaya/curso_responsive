@@ -102,6 +102,7 @@ input:focus, textarea:focus {
 }
 
 .background {
+	background-color: #0D47A1;
   background-image: url('../images/background.png');
   background-size: cover;
 }
@@ -325,9 +326,10 @@ input:focus, textarea:focus {
 	text-align: center;
 	cursor: pointer;
 	position: absolute;
-	left: 15px;
-	top: 15px;
+	left: 10px;
+	top: 10px;
 	z-index: 3;
+	color: white;
 	
 }
 
@@ -388,6 +390,18 @@ input:focus, textarea:focus {
 	.contenedor-guitarra-a {
 		padding: 0;
 	}
+	
+/*	PRECIOS */
+	
+	.tabla .contenedor {
+		overflow: auto;
+		border: 1px solid #273b47;
+	}
+	
+	.tabla {
+		margin: 50px 20px;
+	}
+	
 }
 
 @media screen and (max-width: 767px) {
@@ -466,6 +480,14 @@ input:focus, textarea:focus {
 @media screen and (max-width: 500px) {
 	
 	.portada .contenedor {
+		position: static;
+	}
+	
+	.header {
+		position: static;
+	}
+	
+	.header .contenedor{
 		position: static;
 	}
 	
@@ -553,4 +575,10 @@ video {
 	bottom: 0;
 	width: 100%;
 	height: 100%;
+}
+
+@media screen and(-webkit-min-device-pixel-ratio: 2) {
+	.background {
+		background-image: url('../images/background2x.png');
+	}
 }
