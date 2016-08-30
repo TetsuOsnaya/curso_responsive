@@ -13,7 +13,8 @@
         <figure class="logotipo"> <!-- logotipo -->
           <img src="images/frontstage-white.png" width="186" height="60" alt="FrontStage logotipo"/>
         </figure>
-        <nav class="menu"> <!-- menu -->
+        <span class="hamburguesa icon-menu" id="hamburguesa"></span>
+        <nav class="menu" id="menu"> <!-- menu -->
           <ul>
             <li>
               <a href="index.html">Inicio</a>
@@ -102,5 +103,14 @@
         </form>
       </div>
     </footer>
+    <script>
+			var $hamburguesa = document.getElementById('hamburguesa');
+			var $menu = document.getElementById('menu');
+			
+			$hamburguesa.addEventListener('click', function(){
+				$menu.classList.toggle('active');
+			});
+//			$menu.classList.toggle('active');
+		</script>
   </body>
 </html>
