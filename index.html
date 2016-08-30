@@ -5,6 +5,7 @@
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/estilo.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!--    <link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css"/> -->
   </head>
   <body>
@@ -107,7 +108,9 @@
 			var $hamburguesa = document.getElementById('hamburguesa');
 			var $menu = document.getElementById('menu');
 			
-			$hamburguesa.addEventListener('click', function(){
+			$hamburguesa.addEventListener('touchstart', toggleMenu);
+			
+			function toggleMenu(){
 				$menu.classList.toggle('active');
 			});
 //			$menu.classList.toggle('active');
