@@ -105,14 +105,40 @@
       </div>
     </footer>
     <script>
+			var consulta = window.matchMedia('(max-width: 500px)');
+			consulta.addListener(mediaQuery);
+
 			var $hamburguesa = document.getElementById('hamburguesa');
 			var $menu = document.getElementById('menu');
-			
-			$hamburguesa.addEventListener('touchstart', toggleMenu);
-			
+
 			function toggleMenu(){
 				$menu.classList.toggle('active');
-			});
+			};
+			
+													 
+			function mediaQuery(){									
+				if (consulta.matches){
+					console.log('se cumplio la condicion consulta');
+					
+					$hamburguesa.addEventListener('touchstart', toggleMenu);
+
+				}
+			else {
+					console.log('no se cumplio la condicion consulta');
+					
+					$hamburguesa.removeEventListener('touchstart', toggleMenu);
+				}
+			}
+
+			mediaQuery();
+
+
+			
+//			$hamburguesa.addEventListener('touchstart', toggleMenu);
+//			
+//			function toggleMenu(){
+//				$menu.classList.toggle('active');
+//			};
 //			$menu.classList.toggle('active');
 		</script>
   </body>
