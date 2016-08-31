@@ -5,15 +5,17 @@
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/estilo.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 <!--    <link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css"/> -->
   </head>
   <body>
     <section id="portada" class="portada background"> <!-- portada -->
       <header id="header" class="header contenedor"> <!-- header -->
         <figure class="logotipo"> <!-- logotipo -->
-          <img src="images/frontstage-white.png" width="186" height="60" alt="FrontStage logotipo"/>
+          <img data-src="images/frontstage.png|images/frontstage2x.png" srcset="images/frontstage.png, images/frontstage2x.png 2x" width="186" height="60" alt="FrontStage logotipo"/>
         </figure>
-        <nav class="menu"> <!-- menu -->
+        <span class="hamburguesa icon-menu" id="hamburguesa"></span>
+        <nav class="menu" id="menu"> <!-- menu --> 
           <ul>
             <li>
               <a href="index.html">Inicio</a>
@@ -34,9 +36,22 @@
       </div>
     </section>
     <section id="guitarras" class="guitarras contenedor"> <!-- guitarras -->
+     <h2 class="title">Vídeos de la semana</h2>
+     	<div class="contenedor-video">
+     		<iframe class="video-yt" width="640" height="360" src="https://www.youtube-nocookie.com/embed/fpd9pCsB-AU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+     	</div>
+     	
+<!-- VIDEO MR. ROBOT CONFIDENCIAL REPTILIANO ILLUMINATI
+     	
+     	<div class="contenedor-video">
+     		<iframe class="video-yt" width="640" height="360" src="https://www.youtube-nocookie.com/embed/UYfh9YhUVdE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+     	</div>
+     	
+-->
+
       <h2 class="title">Nuestras oportunidades</h2><!-- titulo -->
       <article class="guitarra"> <!-- guitarra 1 -->
-        <img class="derecha" src="images/frontstage-eventos.png" alt="Frontstage Eventos" width="350"/>
+        <img class="derecha" data-src="images/frontstage-eventos.png|images/frontstage-eventos2x.png" alt="Frontstage Eventos" width="350"/>
         <div class="contenedor-guitarra-a">
           <h3 class="title-b">Eventos</h3>
           <ol>
@@ -47,7 +62,7 @@
         </div>
       </article>
       <article class="guitarra b"> <!-- guitarra 2 -->
-        <img class="izquierda" src="images/frontstage-cursos.png" alt="FrontStage Cursos" width="350"/>
+        <img class="izquierda" data-src="images/frontstage-cursos.png|images/frontstage-cursos2x.png" alt="FrontStage Cursos" width="350"/>
         <div class="contenedor-guitarra-b">
           <h3 class="title-b">Cursos</h3>
           <ol>
@@ -61,7 +76,7 @@
     <footer class="footer">
       <div class="contenedor">
         <div class="contacto">
-          <img src="images/frontstage-white.png" alt="logotipo blanco"/>
+          <img data-src="images/frontstage-white.png|images/frontstage-white2x.png" alt="logotipo blanco"/>
           <a href="tel:+573024456678"><strong>Telefono</strong> <span>3024456678</span></a>
           <a href="mailto:contacto@frontstage.com"><strong>E-mail</strong> <span>contacto@frontstage.com</span></a>
         </div>
@@ -102,5 +117,59 @@
         </form>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>
+    <script>
+			var consulta = window.matchMedia('(max-width: 500px)');
+			consulta.addListener(mediaQuery);
+
+			var $hamburguesa = document.getElementById('hamburguesa');
+			var $menu = document.getElementById('menu');
+
+			function toggleMenu(){
+				$menu.classList.toggle('active');
+			};
+			function showMenu(){
+				$menu.classList.add('active');
+			};
+			function hideMenu(){
+				$menu.classList.remove('active');
+			};
+			
+			
+													 
+			function mediaQuery(){									
+				if (consulta.matches){
+					console.log('se cumplio la condicion consulta');
+					
+		
+					$hamburguesa.addEventListener('click', toggleMenu);
+
+				}
+			else {
+					console.log('no se cumplio la condicion consulta');
+					
+					$hamburguesa.removeEventListener('click', toggleMenu);
+				}
+			}
+
+			mediaQuery();
+
+// LAZY LOADING
+
+			var bLazy = new Blazy({
+					// options
+				selector: 'img'
+			});
+			
+
+//			GESTOS TOUCH
+			var $body = document.body;
+			var gestos = new Hammer($body);
+			gestos.on('swipeleft', hideMenu);
+			gestos.on('swiperight', showMenu);
+
+
+		</script>
   </body>
 </html>

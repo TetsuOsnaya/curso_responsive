@@ -5,14 +5,17 @@
     <meta charset="utf-8"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/estilo.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
   </head>
-  <body>
+  <body class="packs">
     <header id="header" class="header background"> <!-- header -->
       <div class="contenedor">
         <figure class="logotipo"> <!-- logotipo -->
-          <img src="images/frontstage-white.png" width="186" height="60" alt="Invie logotipo"/>
+          <img src="images/frontstage.png" width="186" height="60" alt="Invie logotipo"/>
         </figure>
-        <nav class="menu"> <!-- menu -->
+        <span class="hamburguesa icon-menu" id="hamburguesa"></span>
+        <nav class="menu" id="menu"> <!-- menu -->
           <ul>
             <li>
               <a href="index.html">Inicio</a>
@@ -35,10 +38,16 @@
               <th>Modelo</th>
               <th>Precio</th>
               <th>Descripción</th>
+              <th>Modelo</th>
+              <th>Precio</th>
+              <th>Descripción</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>Suscripción a Eventos</td>
+              <td>$200 mensuales</td>
+              <td>Acceso a todos los eventos, incluye comida :D</td>
               <td>Suscripción a Eventos</td>
               <td>$200 mensuales</td>
               <td>Acceso a todos los eventos, incluye comida :D</td>
@@ -47,8 +56,14 @@
               <td>Cursos</td>
               <td>$500 c/u</td>
               <td>La carrera a recorrer para el estrellato</td>
+               <td>Cursos</td>
+              <td>$500 c/u</td>
+              <td>La carrera a recorrer para el estrellato</td>
             </tr>
             <tr>
+              <td>Servicios Personalizados</td>
+              <td>Cotizar</td>
+              <td>¿Quieres una ayuda personalizada? Este es el lugar</td>
               <td>Servicios Personalizados</td>
               <td>Cotizar</td>
               <td>¿Quieres una ayuda personalizada? Este es el lugar</td>
@@ -101,5 +116,57 @@
         </form>
       </div>
     </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+s
+   	 <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>
+    <script>
+			var consulta = window.matchMedia('(max-width: 500px)');
+			consulta.addListener(mediaQuery);
+
+			var $hamburguesa = document.getElementById('hamburguesa');
+			var $menu = document.getElementById('menu');
+
+			function toggleMenu(){
+				$menu.classList.toggle('active');
+			};
+			function showMenu(){
+				$menu.classList.add('active');
+			};
+			function hideMenu(){
+				$menu.classList.remove('active');
+			};
+			
+													 
+			function mediaQuery(){									
+				if (consulta.matches){
+					console.log('se cumplio la condicion consulta');
+					
+					$hamburguesa.addEventListener('click', toggleMenu);
+
+				}
+			else {
+					console.log('no se cumplio la condicion consulta');
+					
+					$hamburguesa.removeEventListener('click', toggleMenu);
+				}
+			}
+
+			mediaQuery();
+
+// LAZY LOADING
+
+			var bLazy = new Blazy({
+					// options
+				selector: 'img'
+			});
+
+//			GESTOS TOUCH
+			var $body = document.body;
+			var gestos = new Hammer($body);
+			gestos.on('swipeleft', hideMenu);
+			gestos.on('swiperight', showMenu);
+	
+
+		</script>
   </body>
 </html>
