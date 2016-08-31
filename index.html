@@ -142,13 +142,14 @@
 				if (consulta.matches){
 					console.log('se cumplio la condicion consulta');
 					
-					$hamburguesa.addEventListener('touchstart', toggleMenu);
+		
+					$hamburguesa.addEventListener('click', toggleMenu);
 
 				}
 			else {
 					console.log('no se cumplio la condicion consulta');
 					
-					$hamburguesa.removeEventListener('touchstart', toggleMenu);
+					$hamburguesa.removeEventListener('click', toggleMenu);
 				}
 			}
 

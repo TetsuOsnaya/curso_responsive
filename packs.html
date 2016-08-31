@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
   </head>
-  <body>
+  <body class="packs">
     <header id="header" class="header background"> <!-- header -->
       <div class="contenedor">
         <figure class="logotipo"> <!-- logotipo -->
@@ -116,6 +116,8 @@
         </form>
       </div>
     </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+s
    	 <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>
     <script>
 			var consulta = window.matchMedia('(max-width: 500px)');
@@ -127,19 +129,25 @@
 			function toggleMenu(){
 				$menu.classList.toggle('active');
 			};
+			function showMenu(){
+				$menu.classList.add('active');
+			};
+			function hideMenu(){
+				$menu.classList.remove('active');
+			};
 			
 													 
 			function mediaQuery(){									
 				if (consulta.matches){
 					console.log('se cumplio la condicion consulta');
 					
-					$hamburguesa.addEventListener('touchstart', toggleMenu);
+					$hamburguesa.addEventListener('click', toggleMenu);
 
 				}
 			else {
 					console.log('no se cumplio la condicion consulta');
 					
-					$hamburguesa.removeEventListener('touchstart', toggleMenu);
+					$hamburguesa.removeEventListener('click', toggleMenu);
 				}
 			}
 
@@ -151,6 +159,12 @@
 					// options
 				selector: 'img'
 			});
+
+//			GESTOS TOUCH
+			var $body = document.body;
+			var gestos = new Hammer($body);
+			gestos.on('swipeleft', hideMenu);
+			gestos.on('swiperight', showMenu);
 	
 
 		</script>

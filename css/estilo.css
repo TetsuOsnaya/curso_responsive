@@ -321,16 +321,16 @@ input:focus, textarea:focus {
 	height: 50px;
 	line-height: 50px;
 	border-radius: 50px;
-	background: #fe354e;
+	background: #7C4DFF;
 	display: inline-block;
 	text-align: center;
 	cursor: pointer;
-	position: absolute;
+	position: fixed;
 	left: 10px;
 	top: 10px;
 	z-index: 3;
 	color: white;
-	
+	display: none;
 }
 
 
@@ -478,9 +478,24 @@ input:focus, textarea:focus {
 
 @media screen and (max-width: 500px) {
 	
+	.portada .button {
+		display: block;
+		align-items: stretch;
+	}
+	
+	
+	.packs .header .logotipo {
+		margin: 10px 0;
+	}
+	
+	.hamburguesa {
+		display: block;
+	}
+	
 	.portada .contenedor {
 		position: static;
 	}
+	
 	
 	.header {
 		position: static;
@@ -492,7 +507,7 @@ input:focus, textarea:focus {
 	
 	.menu {
 		background: rgba(254, 53, 78,.8);
-		position: absolute;
+		position: fixed;
 		left: -100%;
 		width: 100%;
 		top: 0;
@@ -551,6 +566,10 @@ input:focus, textarea:focus {
 	
 	.title-b {
 		font-size: 30px;
+	}
+	
+	.col2 {
+		align-items: stretch;
 	}
 	
 }
